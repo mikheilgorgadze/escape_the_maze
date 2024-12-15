@@ -26,7 +26,6 @@ func main() {
 
         if event.Key == keyboard.KeyEsc{
             break
-        }
-
+        } 
     }
 }
