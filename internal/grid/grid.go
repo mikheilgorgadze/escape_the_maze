@@ -40,12 +40,16 @@ func (g *Grid) GetCellType(pos player.Position) rune{
     return g.Cells[pos.Row][pos.Col]
 }
 
-func (g *Grid) MovePlayer(oldPos, newPos player.Position){
+func (g *Grid) MovePlayerOnGrid(oldPos, newPos player.Position){
     g.Cells[oldPos.Row][oldPos.Col] = PATH
     g.Cells[newPos.Row][newPos.Col] = PLAYER
 }
 
 func (g *Grid) PlacePlayer(pos player.Position) {
     g.Cells[pos.Row][pos.Col] = PLAYER
+}
+
+func (g *Grid) PlaceEnemy(pos player.Position) {
+    g.Cells[pos.Row][pos.Col] = ENEMY
 }
 

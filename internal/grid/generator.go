@@ -34,8 +34,8 @@ func GenerateNewGrid(width, height, enemyCount int) *Grid{
 func (g* Grid) GenerateEnemies(enemyCount int){
     r := rand.New(rand.NewSource(time.Now().UnixNano()))
     for i := 0; i < enemyCount; {
-        row := r.Intn(g.Height)
-        col := r.Intn(g.Width)
+        row := r.Intn(g.Height-2) + 1
+        col := r.Intn(g.Width-2) + 1
         if g.Cells[row][col] == PATH {
             g.Cells[row][col] = ENEMY
             i++
